@@ -14,12 +14,8 @@ class HomeViewController: UIViewController,HomeDelegate ,UITextFieldDelegate{
          self.fillDataWithTip(tip: tipResult)
     }
     
-    internal func didEndSetClassVenue(venues: [Cls_Venue]) {
-        self.drawScrollView(venues: venues)
-        self.venues = venues
-    }
 
-
+    @IBOutlet weak var bankView: UIView!
     @IBOutlet weak var tfInputAmount: UITextField!
     @IBOutlet weak var venueScrollView: UIScrollView!
     
@@ -38,6 +34,7 @@ class HomeViewController: UIViewController,HomeDelegate ,UITextFieldDelegate{
     
     //
     var homeController = HomeController()
+    var venueController = VenueController()
     var serviceType : ServiceType = ServiceType.None
     var venues  = [Cls_Venue]()
     var clsTip: Cls_Tip = Cls_Tip()
@@ -52,6 +49,13 @@ class HomeViewController: UIViewController,HomeDelegate ,UITextFieldDelegate{
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let venue = currentVenue{
+            self.fillDataWithVenue(venue: venue)
+        }
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
@@ -69,7 +73,9 @@ class HomeViewController: UIViewController,HomeDelegate ,UITextFieldDelegate{
         
         tfInputAmount.delegate = self
         
-        homeController.createListVenue()
+        self.venues = appDelegate.venueController.venues
+        
+        self.drawScrollView(venues: self.venues)
     }
     private func initLayout(){
         tfInputAmount.attributedPlaceholder = NSAttributedString(string:"Tap to enter your bill amount",
@@ -168,12 +174,14 @@ class HomeViewController: UIViewController,HomeDelegate ,UITextFieldDelegate{
             serviceType = .Good
             self.drawRateService(serviceRating: serviceType)
         }
-        let venue = venues[btn.tag]
+         let venue = venues[btn.tag]
         currentVenue = venue
+        self.fillDataWithVenue(venue: venue)
+    }
+    func fillDataWithVenue(venue:Cls_Venue){
         self.clsTip.tipPercent = venue.getPercentWithServiceType(serviceType: serviceType)
         homeController.calulatorAmount(tip: self.clsTip)
     }
-    
     func resetVenueMode(){
         serviceType = .None
         currentVenue = Cls_Venue()
@@ -225,6 +233,11 @@ class HomeViewController: UIViewController,HomeDelegate ,UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.clsTip.totalBill = (textField.text! as NSString).integerValue
         homeController.calulatorAmount(tip: self.clsTip)
+        bankView.isHidden = true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        bankView.isHidden = false
     }
     
     

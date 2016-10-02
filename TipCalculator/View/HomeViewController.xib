@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="TipCalculator" customModuleProvider="target">
             <connections>
+                <outlet property="bankView" destination="7ri-Yi-gGW" id="iTR-hj-b4Y"/>
                 <outlet property="imgBad" destination="ZPX-p0-ZIs" id="QP4-cz-H9A"/>
                 <outlet property="imgGood" destination="6fi-wk-dp6" id="TsX-M0-7iT"/>
                 <outlet property="imgVeryGood" destination="rWP-Tg-f1U" id="R8A-s4-Vpq"/>
@@ -465,10 +466,14 @@
                                 <constraint firstItem="TTy-Mb-vgx" firstAttribute="centerX" secondItem="Gop-A6-YKQ" secondAttribute="centerX" id="gwR-E8-Crc"/>
                             </constraints>
                         </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ri-Yi-gGW" userLabel="Bank View">
+                            <color key="backgroundColor" red="0.078431372549019607" green="0.0" blue="0.0" alpha="0.27000000000000002" colorSpace="calibratedRGB"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="1Au-Dh-tc0" firstAttribute="leading" secondItem="KDR-xL-zox" secondAttribute="leading" id="0M5-T8-12R"/>
+                        <constraint firstAttribute="trailing" secondItem="7ri-Yi-gGW" secondAttribute="trailing" id="0oW-7P-VQe"/>
                         <constraint firstItem="1Au-Dh-tc0" firstAttribute="top" secondItem="kmM-CX-7vW" secondAttribute="bottom" constant="1" id="18f-Y7-JYg"/>
                         <constraint firstAttribute="trailing" secondItem="kmM-CX-7vW" secondAttribute="trailing" id="1wv-ZD-otn"/>
                         <constraint firstItem="kmM-CX-7vW" firstAttribute="leading" secondItem="KDR-xL-zox" secondAttribute="leading" id="5Ml-Y4-TjZ"/>
@@ -482,6 +487,7 @@
                         <constraint firstItem="Gop-A6-YKQ" firstAttribute="top" secondItem="0IF-kr-TwP" secondAttribute="bottom" constant="-1" id="KZh-KP-rQd"/>
                         <constraint firstItem="QIg-UV-2fk" firstAttribute="top" secondItem="1Au-Dh-tc0" secondAttribute="bottom" constant="8" id="Mhg-8H-hB5"/>
                         <constraint firstAttribute="trailing" secondItem="0IF-kr-TwP" secondAttribute="trailing" id="NFs-OK-0F0"/>
+                        <constraint firstAttribute="bottom" secondItem="7ri-Yi-gGW" secondAttribute="bottom" id="NkY-Nb-DDY"/>
                         <constraint firstItem="eaF-RI-Pq2" firstAttribute="top" secondItem="Vdc-ff-bHT" secondAttribute="bottom" constant="1" id="Qrz-kA-sv2"/>
                         <constraint firstAttribute="bottom" secondItem="cwW-Yi-Mv7" secondAttribute="bottom" id="SWA-1P-Ny7"/>
                         <constraint firstItem="Vdc-ff-bHT" firstAttribute="leading" secondItem="KDR-xL-zox" secondAttribute="leading" id="TVt-MY-2nn"/>
@@ -491,6 +497,7 @@
                         <constraint firstItem="0IF-kr-TwP" firstAttribute="leading" secondItem="KDR-xL-zox" secondAttribute="leading" id="gu8-EO-1NB"/>
                         <constraint firstItem="xIE-bY-KDf" firstAttribute="top" secondItem="eaF-RI-Pq2" secondAttribute="bottom" id="hXX-dY-kzl"/>
                         <constraint firstItem="Gop-A6-YKQ" firstAttribute="leading" secondItem="KDR-xL-zox" secondAttribute="leading" id="hXw-If-Cji"/>
+                        <constraint firstItem="7ri-Yi-gGW" firstAttribute="leading" secondItem="KDR-xL-zox" secondAttribute="leading" id="hqY-Fb-po1"/>
                         <constraint firstAttribute="trailing" secondItem="QIg-UV-2fk" secondAttribute="trailing" id="iEo-5n-cL0"/>
                         <constraint firstItem="xIE-bY-KDf" firstAttribute="leading" secondItem="KDR-xL-zox" secondAttribute="leading" id="iQ6-Vc-pBr"/>
                         <constraint firstItem="1Au-Dh-tc0" firstAttribute="height" secondItem="kmM-CX-7vW" secondAttribute="height" id="kII-NM-nSw"/>
@@ -499,6 +506,7 @@
                         <constraint firstAttribute="trailing" secondItem="Gop-A6-YKQ" secondAttribute="trailing" id="qmQ-Fs-zhw"/>
                         <constraint firstAttribute="trailing" secondItem="1Au-Dh-tc0" secondAttribute="trailing" id="smt-7a-NJL"/>
                         <constraint firstItem="kmM-CX-7vW" firstAttribute="height" secondItem="0IF-kr-TwP" secondAttribute="height" id="v3V-7n-vQL"/>
+                        <constraint firstItem="7ri-Yi-gGW" firstAttribute="top" secondItem="KDR-xL-zox" secondAttribute="top" id="ybz-8v-Dah"/>
                         <constraint firstItem="Vdc-ff-bHT" firstAttribute="top" secondItem="KDR-xL-zox" secondAttribute="top" id="ypk-ls-sBQ"/>
                     </constraints>
                 </view>
@@ -583,45 +591,6 @@
                 <constraint firstAttribute="bottom" secondItem="KDR-xL-zox" secondAttribute="bottom" id="rVN-ck-pJQ"/>
             </constraints>
             <point key="canvasLocation" x="-269.5" y="16.5"/>
-        </view>
-        <view contentMode="scaleToFill" id="PSu-3f-hdM" userLabel="View Venue">
-            <rect key="frame" x="0.0" y="0.0" width="640" height="88"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFT-HT-oW0">
-                    <frame key="frameInset" width="106" height="88"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4rI-K8-EeG">
-                    <frame key="frameInset" minX="213" width="106" height="88"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vag-mJ-Yjg">
-                    <frame key="frameInset" minX="320" width="106" height="88"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J26-EJ-0yO">
-                    <frame key="frameInset" minX="427" width="106" height="88"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yyU-2n-gLo">
-                    <frame key="frameInset" minX="534" width="106" height="88"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="POz-P4-NE7">
-                    <frame key="frameInset" minX="106" width="106" height="88"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-            </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-118" y="381"/>
         </view>
     </objects>
     <resources>

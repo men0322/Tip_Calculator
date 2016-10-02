@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var homeViewController : HomeViewController?
     var navController : UINavigationController?
+    var venueController = VenueController()
     var screenWidth : CGFloat = 0.0
     var screenHeight : CGFloat = 0.0
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -25,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         screenHeight = UIScreen.main.bounds.height
         homeViewController =  HomeViewController(nibName: "HomeViewController", bundle: nil)
         self.navController = UINavigationController(rootViewController: self.homeViewController!)
+        venueController.getListVenue()
         self.navController?.setNavigationBarHidden(true, animated: false)
         self.window?.rootViewController = self.navController
         self.window?.makeKeyAndVisible()

@@ -12,7 +12,7 @@ Time spent: **20 hours**
 
 ## Video Walkthrough 
 
-<img src='http://im.ezgif.com/tmp/ezgif-3572713344.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/men0322/Tip_Calculator/blob/master/tip.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

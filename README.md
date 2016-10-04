@@ -25,7 +25,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 - [x] Main page - Select Your Venue: there are some default venues. Each venue has three different tip percentage values.
-- [x] Main page - Rate Your Service: decide tip percentage value (which is pre-defined) by selecting emotion icons.
+- [x] Main page - Rate Your Service: decide tip percentage value (which is pre-defined, by each venue) by selecting emotion icons.
 - [x] Main page - Tip Percentage: user can also customize value for selected emotion icon, if prefer.
 - [x] Main page - No. of People: split bill feature. Friends can easily know their payments.
 - [x] Main page - Renew: bring everything back to default.
